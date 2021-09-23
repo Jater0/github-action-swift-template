@@ -21,4 +21,5 @@ if [ -e "Gemfile" ]; then
   bundle config set deployment 'true';
   bundle config path vendor/bundle;
   bundle install --jobs 4 --retry 3 || echo "failed to install bundle";
+  instruments -s
 fi
