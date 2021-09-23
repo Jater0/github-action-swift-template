@@ -1,11 +1,10 @@
-#! /bin/sh
+#!/bin/sh
 
 echo "checking for homebrew updates";
-
-brew upgrade
+brew update
 
 function install_current {
-  echo "try to update $1"
+  echo "trying to update $1"
   brew upgrade $1 || brew install $1 || true
   brew link $1
 }
@@ -13,7 +12,7 @@ function install_current {
 if [ -e "Gemfile" ]; then
   echo "installing ruby gems";
   gem install bundler --no-document || echo "failed to install bundle";
-  bundle config set deployment "true";
+  bundle config set deployment 'true';
   bundle config path vendor/bundle;
-  bundle install || echo "Failed to install bundle";
-if
+  bundle install --jobs 4 --retry 3 || echo "failed to install bundle";
+fi
