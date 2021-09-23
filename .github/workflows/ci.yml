@@ -1,0 +1,13 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - master
+      
+jobs:
+  tym-ci:
+    runs-on: macOS-lastest
+    steps:
+      - name: Checkout
+        uses: action/checkout@v1
