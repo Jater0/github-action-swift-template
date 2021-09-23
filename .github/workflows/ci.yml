@@ -7,7 +7,7 @@ on:
       
 jobs:
   tym-ci:
-    runs-on: macOS-lastest
+    runs-on: macOS-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
