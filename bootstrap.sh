@@ -2,7 +2,7 @@
 
 echo "checking for homebrew updates";
 
-brew update
+brew upgrade
 
 function install_current {
   echo "try to update $1"
