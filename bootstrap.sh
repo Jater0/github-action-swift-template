@@ -9,6 +9,12 @@ function install_current {
   brew link $1
 }
 
+if [ -e "Podfile" ]; then
+  echo "installing pod";
+  gem install cocoapods;
+  pod install;
+fi
+
 if [ -e "Gemfile" ]; then
   echo "installing ruby gems";
   gem install bundler --no-document || echo "failed to install bundle";
