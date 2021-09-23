@@ -23,4 +23,4 @@ jobs:
         run: sh ./bootstrap.sh
 
       - name: Run Tests
-        run: bundle exec fastlane test
+        run: fastlane test
