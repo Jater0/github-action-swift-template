@@ -7,7 +7,20 @@ on:
       
 jobs:
   tym-ci:
-    runs-on: macOS-lastest
+    runs-on: macOS-latest
     steps:
       - name: Checkout
-        uses: action/checkout@v1
+        uses: actions/checkout@v1
+
+      - name: Cache RubyGems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gem-
+
+      - name: Install dependencies
+        run: sh ./bootstrap.sh
+
+      - name: My Test
+        run: fastlane mytest

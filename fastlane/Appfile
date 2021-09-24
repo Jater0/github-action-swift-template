@@ -1,0 +1,2 @@
+app_identifier "com.tymphany.Swift-Github-Action-Template" # The bundle identifier of your app
+apple_id "jater.zhu@tymphany.com"  # Your Apple email address

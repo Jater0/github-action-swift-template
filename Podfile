@@ -2,18 +2,12 @@
 # platform :ios, '9.0'
 
 target 'Swift-Github-Action-Template' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  pod 'AppCenter/Distribute'
+  pod 'TAIoTControllerSDK', :git => 'https://gitlab.com/tymphany/taiotcontrollersdk.git', :tag => '0.9.5'
+end
 
-  # Pods for Swift-Github-Action-Template
-
-  target 'Swift-Github-Action-TemplateTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Swift-Github-Action-TemplateUITests' do
-    # Pods for testing
-  end
-
+target 'Swift-Github-Action-TemplateTests' do
+  use_frameworks!
+  pod 'TAIoTControllerSDK', :git => 'https://gitlab.com/tymphany/taiotcontrollersdk.git', :tag => '0.9.5'
 end
