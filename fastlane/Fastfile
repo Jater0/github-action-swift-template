@@ -20,4 +20,8 @@ platform :ios do
   lane :test do
     scan(scheme: "Swift-Github-Action-Template")
   end
+
+  lane :mytest do
+    puts sh("git log")
+  end
 end
